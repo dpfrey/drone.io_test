@@ -16,7 +16,7 @@ steps:
   - name: build
     image: ubuntu:18.04
     commands:
-      - make
+      - echo "Hello mangOH!"
 
 trigger:
   event:
