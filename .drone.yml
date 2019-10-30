@@ -1,0 +1,24 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: submodules
+    image: alpine/git
+    commands:
+      - git submodule update --recursive --remote
+
+  - name: build
+    image: ubuntu:18.04
+    commands:
+      - make
+
+trigger:
+  event:
+    include:
+      - pull_request
