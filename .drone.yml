@@ -14,9 +14,10 @@ steps:
       - git submodule update --recursive --remote
 
   - name: build
-    image: ubuntu:18.04
+    image: mangoh/mangoh_build:yellow-wp77xx_0.2.3
     commands:
-      - echo "Hello mangOH!"
+      - echo "Echo"
+      - make
 
 trigger:
   event:
